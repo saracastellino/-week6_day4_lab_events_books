@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const form = document.querySelector('#new-item-form');
 form.addEventListener('submit', handleFormSubmit);
+
+const deleteButton = document.querySelector('#delete-button');
+  deleteButton.addEventListener('click', handleDeleteFormSubmit);
 })
 
 const handleFormSubmit = function () {
@@ -29,8 +32,17 @@ const handleFormSubmit = function () {
    list.appendChild(newListItem2);
    list.appendChild(newListItem3);
 
-  // <form><input type="submit" value="delete" class="button-delete"></form>
-   
   document.querySelector('#new-item-form').reset();
 
 }
+
+  const handleDeleteFormSubmit = function () {
+     const deleteButton = document.querySelector('#reading-list');
+     deleteButton.innerHTML = '';
+  }
+
+// HTMLElement.prototype.delete = function() {
+//   while (this.firstChild) {
+//     this.removeChild(this.firstChild);
+//   }
+// }
